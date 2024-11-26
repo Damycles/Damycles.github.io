@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Prata&display=swap');
+
+:root {
+    --background-color:black;
+    --font-color:antiquewhite;
+}
+
+*,*::before,*::after {
+    box-sizing:border-box;
+}
+
+body {
+    background-color:var(--background-color);
+}
+
+.content-grid {
+    --padding-inline: 1rem;
+    --content-max-width: 1200px;
+    --breakout-max-width: 1500px;
+    --nav-max-width: 600px;
+
+
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+    --content-size: calc((var(--content-max-width) - var(--nav-max-width)) / 2);
+  
+    display: grid;
+    grid-template-columns:
+      [full-width-start] 
+      minmax(var(--padding-inline), 1fr) 
+      [breakout-start] 
+      minmax(0, var(--breakout-size)) 
+      [content-start]
+      minmax(0, var(--content-size)) 
+      [nav-start]
+      min(100% - (var(--padding-inline) * 2),var(--nav-max-width))
+      [nav-end]
+      minmax(0, var(--content-size)) 
+      [content-end] 
+      minmax(0, var(--breakout-size)) 
+      [breakout-end] 
+      minmax(var(--padding-inline), 1fr) 
+      [full-width-end];
+}
+
+.content-grid > * {
+    grid-column: content;
+}
+
+.content-grid > .nav {
+    grid-column:nav;
+}
+
+.content-grid > .breakout {
+    grid-column: breakout;
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
+}
+
+.top-bar {
+    display: flex;
+    justify-content:center;
+    position:relative;
+    margin-bottom:1%;
+}
+
+.top-bar header {
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-size:5rem;
+    font-style: normal;
+    color:var(--font-color);
+    background-color:var(--background-color);
+    z-index:1;
+    padding-left:1%;
+    padding-right:1%;
+    padding-bottom:0.5%;
+}
+
+.top-bar h1{
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:1.5rem;
+    color:var(--font-color);
+    position:absolute;
+    top:70%;
+    z-index:2;
+}
+
+.top-bar hr {
+    color:var(--font-color);
+    width:100%;
+    opacity: 0.4;
+    position:absolute;
+    top:50%;
+}
+
+.nav-bar {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.nav-bar .option {
+    box-sizing:border-box;
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:1.4rem;
+    color:var(--font-color);
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    margin-top:10%;
+    margin-bottom:10%;
+}
+
+.nav-bar .option:hover {
+    cursor:pointer;
+    transition:0.2s;
+    outline: 2mm ridge rgb(209, 177, 109);
+    background-color:rgb(17, 12, 36);
+    color:var(--font-color);
+}
+
+.nav-bar .option a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+}
+
+.front-page-slideshow {
+    margin-top:0.4%;
+    display:flex;
+    height:75vh;
+    width:100%;
+    background-image: url(front-page-image-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    animation-name: slideshow-front;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+header {
+    margin-top:2%;
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:5rem;
+    color:var(--font-color);
+    justify-content:center;
+}
+
+.features {
+    display:grid;
+    grid-template-columns: 30% 70%;
+    gap:3%;
+    margin-top:3%;
+}
+.features img{
+    display:flex;
+    object-fit:cover;
+    width:100%;
+    border-radius:10px
+}
+.features h1{
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:3rem;
+    color:var(--font-color);
+    margin:0;
+    Justify-content: center;
+}
+.features p {
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:1.5rem;
+    margin:0;
+    margin-top:2%;
+    line-height:170%;
+    color:var(--font-color);
+}
+
+.order-now {
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    margin-top:5%;
+    margin-bottom:5%;
+}
+.order-now .button {
+    grid-column: 4;
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:2rem;
+    color:var(--font-color);
+    justify-content:center;
+    align-items:center;
+    outline: 2mm ridge rgb(209, 177, 109);
+    background-color:rgb(17, 12, 36);
+}
+
+.order-now .button:hover {
+    transition:0.2s;
+    transform:scale(1.1);
+    cursor: pointer;
+}
+
+.contact {
+    display:grid;
+    grid-template-columns: 30% 70%;
+    gap:3%;
+    margin-top:3%;
+}
+
+.contact img{
+    display:flex;
+    object-fit:cover;
+    width:100%;
+    border-radius:10px
+}
+
+.contact .form-box {
+    display:flex;
+    flex-direction:column;
+    gap:5%;
+    background-color:rgba(20, 11, 53, 0.295);
+    border-radius:10px;
+    outline: solid rgb(209, 177, 109);
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:1rem;
+    color:var(--font-color);
+    justify-content:center;
+    align-items: center;
+    height:fit-content;
+    padding-bottom:10%;
+}
+
+.contact h1{
+    display:flex;
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:2rem;
+    color:var(--font-color);
+    margin-top:2%;
+    justify-content:center;
+}
+
+.contact .form-box .form-shape input,
+.contact .form-box .form-shape select,
+.contact .form-box .form-shape textarea {
+    width: 92%;
+    padding: 0.5rem;
+}
+
+footer {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-size:0.7rem;
+    color:var(--font-color);
+}
+
+@keyframes slideshow-front {
+    0% {
+        background-image: url(front-page-image-1.jpg);
+        opacity:1;
+    }
+    25% {
+        opacity:0;
+    }
+    50% {
+        opacity:1;
+        background-image: url(front-page-image-2.jpg);
+    }
+    
+    75% {
+        opacity:0;
+    }
+    
+    100% {
+        opacity:1;
+        background-image: url(front-page-image-3.jpg);
+    }
+}

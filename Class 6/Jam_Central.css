@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --background-color:rgb(9, 13, 46);
+    --accent-color:rgb(39, 54, 94);
+    --font-color:antiquewhite;
+}
+
+*,*::before,*::after {
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0px;
+    background-color:var(--background-color);
+}
+
+.content-grid {
+    --padding-inline: 1rem;
+    --content-max-width: 1200px;
+    --breakout-max-width: 1500px;
+
+
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+  
+    display: grid;
+    grid-template-columns:
+      [full-width-start] 
+      minmax(var(--padding-inline), 1fr) 
+      [breakout-start] 
+      minmax(0, var(--breakout-size)) 
+      [content-start]
+      min(100% - (var(--padding-inline) * 2),var(--content-max-width))
+      [content-end] 
+      minmax(0, var(--breakout-size)) 
+      [breakout-end] 
+      minmax(var(--padding-inline), 1fr) 
+      [full-width-end];
+}
+
+.content-grid > * {
+    grid-column: content;
+}
+
+.content-grid > .nav {
+    grid-column:nav;
+}
+
+.content-grid > .breakout {
+    grid-column: breakout;
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
+}
+
+.topbar {
+    height:70px;
+    display: grid;
+    grid-template-columns:100px repeat(4,175px);
+    position:relative;
+    background-color:var(--accent-color);
+}
+.topbar img {
+    padding-left:10px;
+    padding-right:10px;
+    display:flex;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    justify-content: center;
+}
+
+.topbar .nav-button {
+    display:flex;
+    font-family: "Orbitron", sans-serif;
+    color:white;
+    font-size:2rem;
+    justify-content:center;
+    padding-top:10px;
+    height:100%;
+    position:relative;
+    cursor: pointer;
+}
+
+.topbar .nav-button::after {
+    content:'';
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition: transform 250ms ease-in;
+}
+
+.topbar .nav-button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.main-content-area {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    height:calc(100vh - 70px);
+    background-image:linear-gradient(270deg,rgb(17, 40, 104) 40%,rgba(9, 13, 46, 0));
+}
+
+.hero_area {
+    display:grid;
+}
+
+.music_player {
+    display:grid;
+    grid-template-columns:20% 80%;
+}
+.music_player .record {
+    height:90%;
+    width:100%;
+    top:5%;
+    grid-column:2;
+    border-left: 4px solid;
+    border-color:rgb(11, 24, 97);
+    border-radius: 10px;
+    box-shadow: -35px 15px 30px rgb(13, 14, 32);
+    position:relative;
+
+    z-index:2;
+}
+
+.music_player .record .image-container {
+    position:absolute;
+    z-index:-1;
+    justify-content:center;
+    overflow:hidden;
+    top:0.5%;
+    max-width: 98%;
+    border-radius:50%;
+    box-shadow: -40px 0px 30px rgba(5, 6, 17, 0.788);
+    transform:translateX(-0%);
+
+    transition: transform 1s ease-in;
+}
+
+.music_player .record.play .image-container {
+    transform:translateX(-50%);
+}
+
+.music_player .record .image-container img {
+    display:flex;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:contain;
+
+    -webkit-mask-image: url("Record.svg");
+    -webkit-mask-size:contain;
+    -webkit-mask-repeat: no-repeat;
+
+    mask-image: url("Record.svg");
+    mask-size:contain;
+    mask-repeat: no-repeat;
+
+    animation: rotate 10s linear infinite;
+    animation-play-state:paused;
+}
+
+.music_player .record.play .image-container img {
+    animation-play-state:running;
+}
+
+.music_player .record .arm{
+    
+    position:absolute;
+    width:17%;
+    left:-3%;
+    
+    transform-origin:50% 10%;
+    
+    transition: 1s linear;
+
+    z-index:200;
+}
+
+.music_player .record.play .arm{
+    transform:rotate(20deg);
+}
+
+.music_player .record .arm img {
+    width: 100%;
+    height: 100%;
+    transform:scale(1);
+}
+
+
+.music_player .record .music-nav {
+    height:100%;
+    width:100%;
+    background-image:linear-gradient(270deg,rgb(67, 111, 161),rgb(26, 61, 112));
+    border-left: 4px solid;
+    border-bottom: 10px solid;     
+    border-color:rgb(11, 24, 97);
+    z-index:10;
+    position:relative;
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:9% 1fr 5%;
+    grid-template-rows: 1fr 1fr;
+
+    justify-content:center;
+}
+
+
+.music_player .record .music-nav .first-screen {
+    display:flex;
+    grid-column:2;
+
+    background-image:url("Record\ Screen1.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    width:100%;
+    height:100%;
+    margin-top:10%;
+
+    padding-top:10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center;
+    text-align:center;
+}
+
+.music_player .record .music-nav .first-screen h1 {
+    font-family: "Orbitron", sans-serif;
+    color:white;
+    font-size:3rem;
+    opacity:0.8;
+    text-shadow: 0px 0px 30px rgb(85, 193, 207);
+}
+
+.music_player .record .music-nav .second-screen {
+    background-image:url("Record\ Screen2.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    grid-column:2;
+    
+    display:grid;
+    grid-template-rows: 20% 80%;
+}
+
+.music_player .record .music-nav .progress-container {
+    display:flex;
+    background:white;
+    border-radius: 20px;
+
+    transform: translate(7.5% , 200%);
+    opacity: 0.8;
+    box-shadow: 0px 0px 30px rgb(85, 193, 207);
+
+    cursor:pointer;
+    margin:10px 0px;
+    height: 1rem;
+    width: 35rem;
+}
+
+.progress-container .progress {
+    background-color: rgb(116, 177, 185);
+    border-radius: 20px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.music_player .record .music-nav .nav-buttons {
+    display:flex;
+    margin-bottom:15%;
+    justify-content:center;
+}
+
+
+.music_player .record .music-nav .nav-buttons .action-button {
+    background-color:rgba(240, 248, 255, 0);
+    border: 0;
+    color: white;
+    height: 100%;
+    font-size: 3rem;
+
+    opacity:0.8;
+    text-shadow: 0px 0px 30px rgb(85, 193, 207);
+
+    padding: 1rem;
+    margin: 0 1.25rem;
+    transition: 100ms ease-in;
+}
+
+.music_player .record .music-nav .nav-buttons .action-button:hover {
+    color:rgb(116, 177, 185);
+    transform:scale(1.2);
+    cursor:pointer;
+}
+
+.music_player .record .music-nav .nav-buttons .action-button:active {
+    color:var(--accent-color);
+    transform:scale(1);
+    cursor:pointer;
+}
+
+.hero_area {
+    display:flex;
+    margin-left:10%;
+    width:80%;
+    position:relative;
+}
+
+.hero_area h1 {
+    font-family: "Orbitron", sans-serif;
+    color:white;
+    font-size:4rem;
+    text-shadow: 4px 6px 3px rgb(35, 121, 161);
+}
+
+.hero_area img {
+    position:absolute;
+    object-fit:cover;
+    width:150%;
+    height:100%;
+    z-index:-2;
+    left:-15%;
+    overflow:hidden;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

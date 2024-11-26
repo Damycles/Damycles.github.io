@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="survey_style.css">
+    <body>
+        <div class="content-grid">
+            <input id="no" type="checkbox">
+            <input id="yes" type="checkbox">
+            <img class="header-image full-width animate fade-in" src="hero-image.jpg">
+            <header class="animate fade-up question">Are you ready<br>to hand over your data?
+                <p>Ready to experience what it's like to hand over personal
+                    information to a shady internet entity?</p>
+            </header>
+            <header class="animate fade-up really"><span style="color:red">Let's try that again...</span><br>
+                Are you ready<br>
+                to hand over<br>
+                your personal data?</header>
+            <label for="yes" class="animate fade-up Yes">Yes</label>
+            <label for="no" class="animate fade-up No">No </label>
+            <div class="form animate fade-up">
+                <h1>Welcome to the Form</h1>
+                <label for="name">
+                    What is your name?
+                </label>
+                <input type="text" id="name" 
+                   placeholder="Come on, you can say it." />
+                <label for="age">How old are you?</label>
+                <input type="text" id="age" pattern="[0-9]"
+                   placeholder="We'll know eventually..." />
+                <label>Do you have a job?</label>
+                <label for="yes-job">
+                    <input type="radio" id="yes-job" 
+                    name="job">Yes
+                    </input>
+                </label>
+                <label for="no-job">
+                    <input type="radio" id="no-job" 
+                    name="job">No
+                </input>
+                </label>
+                <label>What is your race?</label>
+                <label for="White">
+                    <input type="radio" id="White" 
+                    name="race">White
+                </input></label>
+                <label for="African-American">
+                    <input type="radio" id="African-American" 
+                    name="race">African-American
+                    </input>
+                </label>
+                <label for="Asian">
+                    <input type="radio" id="Asian" 
+                    name="race">Asian
+                    </input>
+                </label>
+                <label for="Hispanic">
+                    <input type="radio" id="Hispanic" 
+                    name="race">Hispanic
+                    </input>
+                </label>
+                <label for="Other">
+                    <input type="radio" id="Other" 
+                    name="race">Other
+                    </input>
+                </label>
+                <label>Have you ever wondered why employers ask about your race?</label>
+                <label for="I-have">
+                    <input type="radio" id="I-have" 
+                    name="skeptic">Yes
+                    </input>
+                </label>
+                <label for="I-have-not">
+                    <input type="radio" id="I-have-not" 
+                    name="skeptic">No
+                    </input>
+                </label>
+                <label for="position">Which position suits you best?</label>
+                <select name="position" id="role">
+                    <option value="Snitch">Snitch</option>
+                    <option value="Lapdog">Lapdog</option>
+                    <option value="Enforcer">Enforcer</option>
+                    <option value="Instigator">Instigator</option>
+                    <option value="Resource">Resource</option>
+                </select>
+                <label>have some check boxes.</label>
+                <label for="inp-1">
+                    <input type="checkbox" name="inp">Hey
+                      </input>
+                  </label>
+                <label for="inp-2">
+                    <input type="checkbox" name="inp">Hello
+                      </input>
+                </label>
+                <label for="inp-3">
+                    <input type="checkbox" name="inp">How you doing?
+                      </input>
+                </label>
+                <label for="inp-4">
+                    <input type="checkbox" name="inp">Is this fun?
+                      </input></label>
+                <label for="meditate">How did this make you feel?</label>
+                <textarea name="meditate" id="meditate" 
+                placeholder="Choose your words wisely. You are being watched"></textarea>
+                <button type="submit" value="submit">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+    </body>
+</head>
+</html>

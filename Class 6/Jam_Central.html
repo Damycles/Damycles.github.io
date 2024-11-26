@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Jam_Central.css">
+    <link rel="icon" type="image/x-icon" href="jam_central_favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J-Central</title>
+</head>
+<body>
+    <div class="content-grid">
+        <div class="topbar full-width">
+            <img src="record.png">
+            <a><div class="nav-button">Home</div></a>
+            <a><div class="nav-button">About</div></a>
+            <a><div class="nav-button">Artists</div></a>
+            <a><div class="nav-button">Contact</div></a>
+        </div>
+        <div class="main-content-area full-width">
+            <div class="hero_area">
+                <h1>Welcome to <br>Jam Central Station</h1>
+                <img src="Station_1.png">
+            </div>
+            <div class="music_player">
+                <div class="record">
+                    <audio src="Music/SMTV-prince.mp3" id="audio"></audio>
+                    <div class="arm">
+                        <img src="Record Arm.png">
+                    </div>
+                    <div class="image-container">
+                        <img src="Image/SMTV-prince.jpg" alt="music-cover" id="cover">
+                    </div>
+                    <div class="music-nav">
+                        <div class="first-screen">
+                            <h1 id="title">SMTV-Prince</h1>
+                        </div>
+                        <div class="second-screen">
+                            <div class="progress-container">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="nav-buttons">
+                                <button id="prev" class="action-button">
+                                    <i class="fas fa-backward"></i>
+                                </button>
+                                <button id="play" class="action-button">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="next" class="action-button">
+                                    <i class="fas fa-forward"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Jam_Central.js"></script>
+</body>
+</html>

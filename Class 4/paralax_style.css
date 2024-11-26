@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(9, 13, 46);
+    margin:0;
+    transform-style: preserve-3d;
+    perspective:500px;
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
+.section1, .section2 {
+    width:100%;
+    min-height: 100vh;
+    position:relative;
+    transform-style: preserve-3d;
+    perspective-origin:bottom;
+}
+.section1::before{
+    width:100%;
+    height:100%;
+    content:"";
+    position:absolute;
+    background: url("city_background.png") top center;
+    background-size:cover;
+    transform-style:preserve-3d;
+    z-index:0;
+    transform: translateZ(-300px) scale(1.6);
+    filter:opacity(0.5) blur(1px);
+}
+.section1 img{
+    position:absolute;
+    object-fit:scale-down;
+    transform-style:preserve-3d;
+    transform:translateZ(-165px);
+    z-index:2;
+}
+.section2{
+    z-index:3;
+    background-color:rgb(9, 13, 46);
+}
+.gradient{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-image:linear-gradient(180deg,rgb(17, 40, 104),rgba(9, 13, 46, 0));
+    z-index:1;
+    transform-style:preserve-3d;
+    transform:translateZ(-170px) scale(1.35);
+}
+header{
+    font-family: "Orbitron", sans-serif;
+    color:rgba(152, 219, 228, 0.918);
+    font-size:5rem;
+    top:40%;
+    left:25%;
+    position:absolute;
+    justify-content:center;
+    align-items:center;
+    z-index:2;
+}
+.left_element {
+    left:-25%;
+}
+.right_element {
+    position:absolute;
+    transform-style:preserve-3d;
+    left:72.5%;
+}
+.main_text{
+    font-family: "Playfair Display", serif;
+    background-color:rgb(9, 13, 46);
+    color:rgba(152, 219, 228, 0.918);
+    width:100%;
+    height:100%;
+    z-index:99;
+}

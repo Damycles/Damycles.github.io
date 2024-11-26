@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="stylesheet" href="camera_obscura.css">
+    <link rel="icon" type="image/x-icon" href="jam_central_favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Obscura</title>
+</head>
+<body>
+    <div class="content-grid">
+        <div class="start-screen full-width">
+            <h1>Welcome to Camera Obscura</h1>
+            <h2>Ready to browse the film reel?</h2>
+            <button id="start" class="start-button">Yes</button>
+            <div class="screen-background"></div>
+        </div>
+        <div class="photo-gallery full-width">
+            <div class="topbar">
+                <img src="Camera.svg">
+                <a><div class="nav-button">Home</div></a>
+                <a><div class="nav-button">About</div></a>
+                <a><div class="nav-button">Contact</div></a>
+            </div>
+            <div class="gallery">
+                <img src="city.jpg" onclick="openModal('city.jpg')">
+                <img src="cyber_city.jpg" onclick="openModal('cyber_city.jpg')">
+                <img src="space_landing.jpg" onclick="openModal('space_landing.jpg')">
+                <img src="street.jpg" onclick="openModal('street.jpg')">
+                <img src="low_earth.jpg" onclick="openModal('low_earth.jpg')">
+                <img src="face.jpg" onclick="openModal('face.jpg')">
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+
+    <script src="camera_obscura.js"></script>
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "block";
+        }
+        
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

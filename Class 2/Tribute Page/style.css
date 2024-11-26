@@ -1,0 +1,108 @@
+body {
+    background-color:rgb(6,10,6)
+}
+.center{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+}
+.container {
+    position:relative;
+    align-items: center;
+    text-align: left;
+  }
+.container h1{
+    font-family: 'Bodoni Moda SC';
+    font-size: 6rem;
+    font-weight:400;
+    padding: 1rem 0px;
+    color:rgb(212, 177, 97);
+    position: absolute;
+    background-color:rgba(212, 177, 97,0.75);
+    -webkit-text-stroke: 2.5px black;
+    width:50%;
+    top: 30%;
+    left: 25.22%;
+}
+.container pre{
+    font-family: 'Bodoni Moda SC';
+    font-size: 1.2rem;
+    font-weight:300;
+    text-align:left;
+    margin:auto;
+    word-wrap:break-word;
+    color:rgb(159, 185, 191);
+    background-color:rgba(12, 18, 18,0.98);
+    position:absolute;
+    width:50%;
+    top:50%;
+    left: 25.22%;
+}
+.container .bottombox {
+    background-color:rgb(74, 49, 20);
+    position:relative;
+    width:50%;
+    height: 130px;
+    margin:0;
+    padding:0;
+    left: 25.22%;
+    top: 60%;
+}
+.container .button{
+    font-family: 'Bodoni Moda SC';
+    font-size: 1.2rem;
+    padding: 0.5em 1em;
+    color:rgb(12, 18, 18);
+    background-color:rgb(159, 185, 191);
+    border: 10px solid rgb(197, 137, 47);
+    border-radius:5px;
+    position:absolute;
+    left: 40%;
+    top:25%;
+    transition: transform 0.3s ease;
+}
+.container .button:hover{
+    transform:translateY(-10px);
+}
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.animate-heading-delay {
+    animation-delay: 0.1s;
+}
+.animate-text-delay {
+    animation-delay: 0.3s;
+}
+.animate-box-delay {
+    animation-delay: 0.4s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(75px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-title-image {
+    animation-name: fadeIn;
+    animation-timing-function: ease-in;
+}
+.fade-in-other {
+    animation-name: fadeUp;
+    animation-timing-function: ease-in;
+}
